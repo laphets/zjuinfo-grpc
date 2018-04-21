@@ -1,0 +1,25 @@
+/*
+ * @Author: Laphets 
+ * @Date: 2018-04-21 23:04:55 
+ * @Last Modified by: Laphets
+ * @Last Modified time: 2018-04-22 00:30:54
+ */
+
+
+syntax = "proto3"; 
+
+package zjuauth;
+
+service ZJUauth {
+    rpc ZJUinfoLogin(User) returns (Cookie) {}
+}
+
+message User {
+    string username = 1;   //ZJUid for login
+    string password = 2;    //Password corresponding to that ZJUid
+}
+
+message Cookie {
+    int32 status = 1;
+    repeated string cookie = 2;
+}

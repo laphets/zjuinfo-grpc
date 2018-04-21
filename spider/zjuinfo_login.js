@@ -1,4 +1,11 @@
 /*
+ * @Author: Laphets 
+ * @Date: 2018-04-21 22:24:26 
+ * @Last Modified by: Laphets
+ * @Last Modified time: 2018-04-22 00:21:48
+ */
+
+/*
  * RSA, a suite of routines for performing RSA public-key computations in JavaScript.
  * Copyright 1998-2005 David Shapiro.
  * Dave Shapiro
@@ -946,7 +953,9 @@ const login = (cookie, username, password, execution) => {
     })
 }
 
-const main = async(username, pwd) => {
+const main = async (user) => {
+    const username = user.username;
+    const pwd = user.password;
     let {cookie, execution} = await get_loginpage();
     let {cookie1, modulus, exponent} = await get_publickey(cookie);
     // console.log(cookie1);
