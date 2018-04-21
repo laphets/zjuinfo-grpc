@@ -2,7 +2,7 @@
  * @Author: Laphets 
  * @Date: 2018-04-22 00:42:03 
  * @Last Modified by: Laphets
- * @Last Modified time: 2018-04-22 01:20:04
+ * @Last Modified time: 2018-04-22 01:32:29
  */
 
 const PROTO_PATH = __dirname + '/protos/zju_auth.proto';
@@ -16,5 +16,9 @@ let client = new zjuauth.ZJUauth(require('./config').port, grpc.credentials.crea
 const user = require('./config').test_user;
 
 client.ZJUinfoLogin(user, (err, response) => {
-    console.log(response);
+    if (err) {
+        console.log(err);
+    } else {
+        console.log(response);
+    }
 });

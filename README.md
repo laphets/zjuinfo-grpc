@@ -1,7 +1,7 @@
 # ZJUinfo-grpc
 
 ## Overview
-A rpc based project for *ZJU Unified Identity Authentication System*
+A rpc based project for *ZJU Unified Identity Authentication System*.
 
 ## Server Deploy Guide
 ### Prerequisite
