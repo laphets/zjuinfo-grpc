@@ -2,17 +2,16 @@
  * @Author: Laphets 
  * @Date: 2018-04-21 23:46:43 
  * @Last Modified by: Laphets
- * @Last Modified time: 2018-04-22 00:35:48
+ * @Last Modified time: 2018-04-22 00:47:54
  */
 
-
-const PROTO_PATH = __dirname + '/../protos/zju_auth.proto';
+const PROTO_PATH = __dirname + '/protos/zju_auth.proto';
 const grpc = require('grpc');
 
 let protoDescriptor = grpc.load(PROTO_PATH);
 let zjuauth = protoDescriptor.zjuauth;
 
-const get_auth_cookie = require('../spider/zjuinfo_login');
+const get_auth_cookie = require('./spider/zjuinfo_login');
 const ZJUinfoLogin = (call, callback) => {
     get_auth_cookie(call.request).then((result) => {
         if (result.status == 1) {
@@ -44,5 +43,7 @@ const getServer = () => {
 }
 
 const Server = getServer();
-Server.bind('0.0.0.0:50052', grpc.ServerCredentials.createInsecure());
+const port = require('./config').port;
+Server.bind(port, grpc.ServerCredentials.createInsecure());
+console.log(`Server is running at ${port}`);
 Server.start();
