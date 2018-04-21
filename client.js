@@ -2,7 +2,7 @@
  * @Author: Laphets 
  * @Date: 2018-04-22 00:42:03 
  * @Last Modified by: Laphets
- * @Last Modified time: 2018-04-22 00:44:19
+ * @Last Modified time: 2018-04-22 01:20:04
  */
 
 const PROTO_PATH = __dirname + '/protos/zju_auth.proto';
