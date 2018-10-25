@@ -3,7 +3,7 @@ services:
   ZJUauth-gRPC:
     image: ${IMAGE_TAG}-${CI_COMMIT_SHA}
     networks:
-      - traefik-net
+      - traefik_net
     deploy:
       replicas: 2
       restart_policy:
@@ -12,10 +12,10 @@ services:
         - "traefik.tags=grpc"
         - "traefik.port=50053"
         - "traefik.protocol=h2c"
-        - "traefik.docker.network=traefik-net"
+        - "traefik.docker.network=traefik_net"
         - "traefik.backend=ZJUauth-gRPC"
         - "traefik.frontend.rule=PathPrefix:/qscrpc.ZJUauth/"
 
 networks:
-  traefik-net:
+  traefik_net:
     external: true
