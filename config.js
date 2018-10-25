@@ -1,5 +1,5 @@
 const config = {
-    port: 50052
+    port: 50053
 };
 
 module.exports = config;
