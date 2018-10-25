@@ -16,7 +16,6 @@ services:
         - "traefik.docker.network=traefik_net"
         - "traefik.backend=ZJUauth-gRPC"
         - "traefik.frontend.rule=PathPrefix:/qscrpc.ZJUauth/"
-
 networks:
   traefik_net:
     external: true
