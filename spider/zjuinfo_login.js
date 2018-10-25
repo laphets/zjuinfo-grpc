@@ -2,7 +2,7 @@
  * @Author: Laphets 
  * @Date: 2018-04-21 22:24:26 
  * @Last Modified by: Laphets
- * @Last Modified time: 2018-04-22 00:21:48
+ * @Last Modified time: 2018-10-25 09:29:04
  */
 
 /*
@@ -967,5 +967,12 @@ const main = async (user) => {
     return await login(cookie, username, password, execution);
     // console.log(cookie, modulus, exponent);
 }
+
+// main({
+//     username: '3170111705',
+//     password: ''
+// }).then(res => {
+//     console.log(res)
+// })
 
 module.exports = main;

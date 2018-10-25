@@ -2,12 +2,12 @@
  * @Author: Laphets 
  * @Date: 2018-04-21 23:04:55 
  * @Last Modified by: Laphets
- * @Last Modified time: 2018-04-22 00:42:09
+ * @Last Modified time: 2018-10-25 08:53:43
  */
 
 syntax = "proto3"; 
 
-package zjuauth;
+package qscrpc;
 
 service ZJUauth {
     rpc ZJUinfoLogin(User) returns (Cookie) {}
