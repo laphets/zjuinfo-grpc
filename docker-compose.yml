@@ -1,6 +1,16 @@
 version: '3'
 
 services: 
+  whoami:
+    image: emilevauge/whoami
+    networks:
+      - traefik_net
+    deploy:
+      replicas: 2
+      labels:
+        - "traefik.port=80"
+        - "traefik.frontend.rule=Host:auth.rpc.zjuqsc.com"
+        - "traefik.docker.network=traefik_net"
   ZJUauth-gRPC:
     image: ${IMAGE_TAG}-${CI_COMMIT_SHA}
     networks:
