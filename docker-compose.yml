@@ -1,4 +1,5 @@
 version: '3'
+
 services: 
   ZJUauth-gRPC:
     image: ${IMAGE_TAG}-${CI_COMMIT_SHA}
@@ -9,7 +10,7 @@ services:
       restart_policy:
         condition: on-failure
       labels:
-        - "traefik.tags=grpc"
+        - "traefik.tags=grpc1"
         - "traefik.port=50053"
         - "traefik.protocol=h2c"
         - "traefik.docker.network=traefik_net"
