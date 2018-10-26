@@ -6,6 +6,7 @@ variables:
   CONTAINER_IMAGE: harbor.zjuqsc.com/mobile-api/auth
   IMAGE_TAG: harbor.zjuqsc.com/mobile-api/auth:$CI_COMMIT_REF_SLUG
   SERVICE_NAME: ZJUauth-gRPC
+  GIT_SUBMODULE_STRATEGY: recursive
 
 before_script:
   - docker login -u docker -p $DOCKER_PASSWORD harbor.zjuqsc.com

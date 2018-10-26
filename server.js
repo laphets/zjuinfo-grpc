@@ -2,14 +2,14 @@
  * @Author: Laphets 
  * @Date: 2018-04-21 23:46:43 
  * @Last Modified by: Laphets
- * @Last Modified time: 2018-10-25 09:28:36
+ * @Last Modified time: 2018-10-26 19:09:12
  */
 
-const PROTO_PATH = __dirname + '/protos/zju_auth.proto';
+const PROTO_PATH = __dirname + '/protobuf/ZJUAuth/ZJUAuth.proto';
 const grpc = require('grpc');
 
 let protoDescriptor = grpc.load(PROTO_PATH);
-let qscrpc = protoDescriptor.qscrpc;
+let ZJUAuth = protoDescriptor.ZJUAuth;
 
 const get_auth_cookie = require('./spider/zjuinfo_login');
 const ZJUinfoLogin = (call, callback) => {
@@ -37,7 +37,7 @@ const ZJUinfoLogin = (call, callback) => {
 
 const getServer = () => {
     let server = new grpc.Server();
-    server.addProtoService(qscrpc.ZJUauth.service, {
+    server.addProtoService(ZJUAuth.AuthService.service, {
         ZJUinfoLogin: ZJUinfoLogin
     });
     return server;
